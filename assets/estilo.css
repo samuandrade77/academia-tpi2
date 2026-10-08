@@ -1,0 +1,31 @@
+:root { --verde: #1b7f5a; --escuro: #14213d; --claro: #f5f7f6; --laranja: #fca311; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Tahoma, sans-serif; background: var(--claro); color: var(--escuro); }
+.topo { background: var(--escuro); color: #fff; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.topo h1 { margin: 0; font-size: 1.3rem; }
+.topo span { color: var(--laranja); }
+.menu { display: flex; flex-wrap: wrap; background: var(--verde); }
+.menu a { color: #fff; text-decoration: none; padding: 11px 16px; }
+.menu a:hover, .menu a.atual { background: rgba(0,0,0,.25); }
+.conteudo { max-width: 820px; margin: 28px auto; padding: 0 16px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.bloco { background: #fff; border-left: 5px solid var(--verde); border-radius: 6px; padding: 14px 16px; }
+.bloco h3 { margin: 0 0 6px; }
+.bloco a { color: var(--verde); }
+fieldset { background: #fff; border: 1px solid #d5dbd8; border-radius: 8px; padding: 18px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 16px; }
+legend { font-weight: bold; padding: 0 6px; }
+.campo { display: flex; flex-direction: column; gap: 4px; font-size: .92rem; }
+.campo.largo { grid-column: span 2; }
+input, select, textarea { padding: 8px; border: 1px solid #b9c4bf; border-radius: 5px; font: inherit; }
+.botoes { margin-top: 14px; display: flex; gap: 10px; }
+.botoes button { padding: 10px 22px; border: 0; border-radius: 5px; font-size: 1rem; cursor: pointer; }
+.enviar { background: var(--verde); color: #fff; }
+.limpar { background: #dfe5e2; }
+#retorno { margin-top: 16px; padding: 12px 16px; border-radius: 6px; display: none; }
+#retorno.ok { display: block; background: #e2f4ec; border: 1px solid var(--verde); }
+#retorno.falha { display: block; background: #fdeaea; border: 1px solid #c0392b; }
+#retorno table { border-collapse: collapse; margin-top: 6px; }
+#retorno td { padding: 3px 10px 3px 0; }
+.inicio { display: inline-block; margin-top: 18px; color: var(--verde); font-weight: bold; }
+.rodape { text-align: center; color: #6b7a73; font-size: .8rem; padding: 26px; }
+@media (max-width: 620px) { fieldset { grid-template-columns: 1fr; } .campo.largo { grid-column: auto; } }
