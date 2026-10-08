@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos - Academia Força Viva</title>
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Academia <span>Força Viva</span></h1>
+    <small>Painel administrativo</small>
+  </header>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="alunos.html">Alunos</a>
+    <a href="instrutores.html">Instrutores</a>
+    <a href="planos.html" class="atual">Planos</a>
+    <a href="matriculas.html">Matrículas</a>
+    <a href="avaliacoes.html">Avaliações</a>
+  </nav>
+  <main class="conteudo">
+    <h2>Planos</h2>
+    <p>Cadastro dos planos vendidos pela academia.</p>
+    <form action="api/plano.php" method="post" novalidate>
+      <fieldset>
+      <legend>Dados do plano</legend>
+      <label class="campo">Nome do plano
+        <input type="text" name="nome" placeholder="Ex.: Semestral Musculação">
+      </label>
+      <label class="campo">Duração
+        <select name="duracao">
+          <option value="">-- selecione --</option>
+          <option value="1">1 mês</option>
+          <option value="3">3 meses</option>
+          <option value="6">6 meses</option>
+          <option value="12">12 meses</option>
+        </select>
+      </label>
+      <label class="campo">Mensalidade base (R$)
+        <input type="number" name="mensalidade" step="0.01" min="50">
+      </label>
+      <label class="campo">Desconto (%)
+        <input type="number" name="desconto" min="0" max="40" value="0">
+      </label>
+      <label class="campo">Acessos por semana
+        <input type="number" name="acessos" min="1" max="7">
+      </label>
+      <label class="campo largo">Descrição
+        <textarea name="descricao" rows="3"></textarea>
+      </label>
+      </fieldset>
+      <div class="botoes">
+        <button type="submit" class="enviar">Salvar</button>
+        <button type="reset" class="limpar">Limpar</button>
+      </div>
+    </form>
+    <div id="retorno"></div>
+    <a class="inicio" href="index.html">Voltar ao início</a>
+  </main>
+  <footer class="rodape">TPI II · Trabalho Momento I · [ALUNO 1] e [ALUNO 2]</footer>
+  <script src="scripts/formulario.js"></script>
+</body>
+</html>
