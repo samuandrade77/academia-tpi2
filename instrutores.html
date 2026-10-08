@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instrutores - Academia Força Viva</title>
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Academia <span>Força Viva</span></h1>
+    <small>Painel administrativo</small>
+  </header>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="alunos.html">Alunos</a>
+    <a href="instrutores.html" class="atual">Instrutores</a>
+    <a href="planos.html">Planos</a>
+    <a href="matriculas.html">Matrículas</a>
+    <a href="avaliacoes.html">Avaliações</a>
+  </nav>
+  <main class="conteudo">
+    <h2>Instrutores</h2>
+    <p>Cadastro de instrutor (profissional de Educação Física).</p>
+    <form action="api/instrutor.php" method="post" novalidate>
+      <fieldset>
+      <legend>Dados do instrutor</legend>
+      <label class="campo largo">Nome completo
+        <input type="text" name="nome">
+      </label>
+      <label class="campo">CREF
+        <input type="text" name="cref" placeholder="012345-G/MG">
+      </label>
+      <label class="campo">Especialidade
+        <select name="especialidade">
+          <option value="">-- selecione --</option>
+          <option value="Musculação">Musculação</option>
+          <option value="Funcional">Funcional</option>
+          <option value="Spinning">Spinning</option>
+          <option value="Pilates">Pilates</option>
+          <option value="Lutas">Lutas</option>
+        </select>
+      </label>
+      <label class="campo">Turno
+        <select name="turno">
+          <option value="">-- selecione --</option>
+          <option value="Manhã">Manhã</option>
+          <option value="Tarde">Tarde</option>
+          <option value="Noite">Noite</option>
+          <option value="Integral">Integral</option>
+        </select>
+      </label>
+      <label class="campo">Data de contratação
+        <input type="date" name="contratacao">
+      </label>
+      <label class="campo">E-mail
+        <input type="email" name="email">
+      </label>
+      <label class="campo">Telefone
+        <input type="tel" name="telefone">
+      </label>
+      </fieldset>
+      <div class="botoes">
+        <button type="submit" class="enviar">Salvar</button>
+        <button type="reset" class="limpar">Limpar</button>
+      </div>
+    </form>
+    <div id="retorno"></div>
+    <a class="inicio" href="index.html">Voltar ao início</a>
+  </main>
+  <footer class="rodape">TPI II · Trabalho Momento I · [ALUNO 1] e [ALUNO 2]</footer>
+  <script src="scripts/formulario.js"></script>
+</body>
+</html>

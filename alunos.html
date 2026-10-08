@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alunos - Academia Força Viva</title>
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Academia <span>Força Viva</span></h1>
+    <small>Painel administrativo</small>
+  </header>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="alunos.html" class="atual">Alunos</a>
+    <a href="instrutores.html">Instrutores</a>
+    <a href="planos.html">Planos</a>
+    <a href="matriculas.html">Matrículas</a>
+    <a href="avaliacoes.html">Avaliações</a>
+  </nav>
+  <main class="conteudo">
+    <h2>Alunos</h2>
+    <p>Cadastro de novo aluno da academia.</p>
+    <form action="api/aluno.php" method="post" novalidate>
+      <fieldset>
+      <legend>Dados do aluno</legend>
+      <label class="campo largo">Nome completo
+        <input type="text" name="nome">
+      </label>
+      <label class="campo">CPF
+        <input type="text" name="cpf" placeholder="000.000.000-00">
+      </label>
+      <label class="campo">Data de nascimento
+        <input type="date" name="nascimento">
+      </label>
+      <label class="campo">Sexo
+        <select name="sexo">
+          <option value="">-- selecione --</option>
+          <option value="F">Feminino</option>
+          <option value="M">Masculino</option>
+        </select>
+      </label>
+      <label class="campo">Telefone
+        <input type="tel" name="telefone">
+      </label>
+      <label class="campo">E-mail
+        <input type="email" name="email">
+      </label>
+      <label class="campo">Objetivo
+        <select name="objetivo">
+          <option value="">-- selecione --</option>
+          <option value="Emagrecimento">Emagrecimento</option>
+          <option value="Hipertrofia">Hipertrofia</option>
+          <option value="Condicionamento">Condicionamento</option>
+          <option value="Saúde">Saúde</option>
+        </select>
+      </label>
+      <label class="campo largo">Responsável (se menor de 18)
+        <input type="text" name="responsavel">
+      </label>
+      </fieldset>
+      <div class="botoes">
+        <button type="submit" class="enviar">Salvar</button>
+        <button type="reset" class="limpar">Limpar</button>
+      </div>
+    </form>
+    <div id="retorno"></div>
+    <a class="inicio" href="index.html">Voltar ao início</a>
+  </main>
+  <footer class="rodape">TPI II · Trabalho Momento I · [ALUNO 1] e [ALUNO 2]</footer>
+  <script src="scripts/formulario.js"></script>
+</body>
+</html>
