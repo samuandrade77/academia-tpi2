@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliações físicas - Academia Força Viva</title>
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Academia <span>Força Viva</span></h1>
+    <small>Painel administrativo</small>
+  </header>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="alunos.html">Alunos</a>
+    <a href="instrutores.html">Instrutores</a>
+    <a href="planos.html">Planos</a>
+    <a href="matriculas.html">Matrículas</a>
+    <a href="avaliacoes.html" class="atual">Avaliações</a>
+  </nav>
+  <main class="conteudo">
+    <h2>Avaliações físicas</h2>
+    <p>Registro das medidas do aluno.</p>
+    <form action="api/avaliacao.php" method="post" novalidate>
+      <fieldset>
+      <legend>Medidas</legend>
+      <label class="campo">CPF do aluno
+        <input type="text" name="cpf_aluno">
+      </label>
+      <label class="campo">Data da avaliação
+        <input type="date" name="data">
+      </label>
+      <label class="campo">Sexo
+        <select name="sexo">
+          <option value="">-- selecione --</option>
+          <option value="F">Feminino</option>
+          <option value="M">Masculino</option>
+        </select>
+      </label>
+      <label class="campo">Peso (kg)
+        <input type="number" name="peso" step="0.1">
+      </label>
+      <label class="campo">Altura (m)
+        <input type="number" name="altura" step="0.01" placeholder="1.75">
+      </label>
+      <label class="campo">Cintura (cm)
+        <input type="number" name="cintura" step="0.1">
+      </label>
+      <label class="campo">Quadril (cm)
+        <input type="number" name="quadril" step="0.1">
+      </label>
+      </fieldset>
+      <div class="botoes">
+        <button type="submit" class="enviar">Salvar</button>
+        <button type="reset" class="limpar">Limpar</button>
+      </div>
+    </form>
+    <div id="retorno"></div>
+    <a class="inicio" href="index.html">Voltar ao início</a>
+  </main>
+  <footer class="rodape">TPI II · Trabalho Momento I · [ALUNO 1] e [ALUNO 2]</footer>
+  <script src="scripts/formulario.js"></script>
+</body>
+</html>

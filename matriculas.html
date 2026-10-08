@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrículas - Academia Força Viva</title>
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Academia <span>Força Viva</span></h1>
+    <small>Painel administrativo</small>
+  </header>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="alunos.html">Alunos</a>
+    <a href="instrutores.html">Instrutores</a>
+    <a href="planos.html">Planos</a>
+    <a href="matriculas.html" class="atual">Matrículas</a>
+    <a href="avaliacoes.html">Avaliações</a>
+  </nav>
+  <main class="conteudo">
+    <h2>Matrículas</h2>
+    <p>Matrícula do aluno em um plano, com instrutor responsável.</p>
+    <form action="api/matricula.php" method="post" novalidate>
+      <fieldset>
+      <legend>Dados da matrícula</legend>
+      <label class="campo">CPF do aluno
+        <input type="text" name="cpf_aluno">
+      </label>
+      <label class="campo">Plano
+        <select name="plano">
+          <option value="">-- selecione --</option>
+          <option value="mensal">Mensal - R$ 119,90</option>
+          <option value="trimestral">Trimestral - R$ 329,70</option>
+          <option value="semestral">Semestral - R$ 599,40</option>
+          <option value="anual">Anual - R$ 1.078,80</option>
+        </select>
+      </label>
+      <label class="campo">Instrutor responsável
+        <input type="text" name="instrutor">
+      </label>
+      <label class="campo">Data de início
+        <input type="date" name="inicio">
+      </label>
+      <label class="campo">Forma de pagamento
+        <select name="pagamento">
+          <option value="">-- selecione --</option>
+          <option value="pix">PIX</option>
+          <option value="cartao">Cartão de crédito</option>
+          <option value="boleto">Boleto</option>
+        </select>
+      </label>
+      <label class="campo">Dia de vencimento
+        <select name="vencimento">
+          <option value="">-- selecione --</option>
+          <option value="5">Dia 5</option>
+          <option value="10">Dia 10</option>
+          <option value="15">Dia 15</option>
+          <option value="20">Dia 20</option>
+        </select>
+      </label>
+      </fieldset>
+      <div class="botoes">
+        <button type="submit" class="enviar">Salvar</button>
+        <button type="reset" class="limpar">Limpar</button>
+      </div>
+    </form>
+    <div id="retorno"></div>
+    <a class="inicio" href="index.html">Voltar ao início</a>
+  </main>
+  <footer class="rodape">TPI II · Trabalho Momento I · [ALUNO 1] e [ALUNO 2]</footer>
+  <script src="scripts/formulario.js"></script>
+</body>
+</html>
